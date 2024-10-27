@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+
+.admin_main{
+  display: flex;
+  position: relative;
+}
+
+.admin_main .sidebar{
+  width: 200px;
+  height: 100%;
+  padding: 30px 0px;
+  position: fixed;
+}
+
+
+.admin_main .sidebar ul li{
+  padding: 15px;
+  border-bottom: 1px solid rgba(12, 12, 12, 0.114);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}    
+
+.admin_main .sidebar ul li a{
+  color: var(--text-color);
+  display: block;
+  text-transform: capitalize;
+}
+
+
+.admin_main .sidebar ul li a .fas{
+  width: 25px;
+}
+
+.admin_main .sidebar ul li:hover{
+  background-color: var(--btn-color);
+}
+
+.admin_main .sidebar ul li.active {
+  background-color: var(--btn-color);
+
+ 
+}
+.admin_main .sidebar ul li a.active{
+  color: var(--btn-text-color);
+}
+    
+.admin_main .sidebar ul li:hover a{
+  color: #fff;
+}
+ 
+.admin_main .sidebar .social_media{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.admin_main .sidebar .social_media a{
+  display: block;
+  width: 40px;
+  background: #594f8d;
+  height: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #bdb8d7;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.admin_main .main_content{
+  width: 100%;
+  margin-left: 200px;
+}
+
+.admin_main .main_content .header_admin{
+  padding: 20px;
+  background: var(--background_color);
+  box-shadow: var(--shadow);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    border-radius: 0 10px 10px 0; /* Top-right and bottom-right radius */
+  
+  /* Optional border for definition */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
+.login{
+  background: var(--btn-color);
+  color: var(--btn-text-color);
+  border-radius: 4px;
+  padding: 6px 15px 6px 15px;
+  cursor: pointer;
+}
+.admin_main .main_content .info{
+  margin: 20px;
+  color: #717171;
+  line-height: 25px;
+}
+
+.admin_main .main_content .info div{
+  margin-bottom: 20px;
+}
+
+@media (max-height: 500px){
+  .social_media{
+    display: none !important;
+  }
+}
+  .admin_main{
+            width: 100%;
+        }
+        .sidebar {
+            /* Add a transition effect */
+            transition: transform 0.3s ease;
+            transform: translateX(0);
+            /* Hide the sidebar off-screen by default */
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            /* background-color: #333; */
+            color: white;
+            z-index: 1000;
+        }
+
+        .sidebar.hidden {
+            /* Move the sidebar off-screen */
+            transform: translateX(-100%);
+        }
+
+        .main_content {
+            position: relative;
+            margin-left: auto;
+            /* left:-10px; */
+            width: 100%;
+
+
+           
+            /* Adjust this value if the sidebar width changes */
+            transition: margin-left 0.3s ease;
+        }
+        .main_content .main_container {
+            padding: 15px;
+            width: 100%;
+            background:var(--background_color);
+            margin: auto;
+          
+
+
+        }
+
+        .main_content.shifted {
+            margin-left: 0;
+        }
+
+        .toggle-btn {
+            font-size: 24px;
+            /* color: #333; */
+            color: var(--text-color);
+            cursor: pointer;
+            /* Add any additional styling for the button */
+        }
+        .sidebar{
+            background: var(--background_color);
+        }
+        .sidebar {
+  /* Gradient background */
+  background:var(--cards-color); /* For Chrome and Safari */
+
+  
+  /* Sidebar styling */
+  width: 250px; /* Adjust as needed */
+  height: 100vh; /* Full height of the viewport */
+  color: white;  /* Text color */
+  padding: 15px; /* Padding inside the sidebar */
+  
+  /* Add shadow for a more beautiful design */
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
+  
+  /* Optional rounded corners */
+  border-radius: 0 10px 10px 0; /* Top-right and bottom-right radius */
+  
+  /* Optional border for definition */
+  border-right: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  
+  /* Ensure content doesn't overflow */
+  overflow: auto;
+        }
+
+
+.admin_logo{
+  margin-top: -30px;
+  border-bottom: 1px solid black;
+}
+
+.btn_hover:hover {
+  background: var(--hover-color);
+  color: var(--hover-text-color);
+}

@@ -1,0 +1,218 @@
+/* Global Reset */
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  color: var(--text-color); /* Apply text color globally */
+}
+
+/* Navbar Container */
+nav {
+  background: var(--background-color);
+  box-shadow: var(--shadow);
+  width: 100%;
+  height: 95px;
+  z-index: 1;
+  position: relative;
+}
+
+/* Navbar Logo */
+label.logo {
+  color: var(--text-color);
+  font-size: 25px;
+  line-height: 80px;
+  padding: 0 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Navbar Links */
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  font-size: 15px;
+  padding: 7px 7px;
+  font-weight: 500;
+  border-radius: 3px;
+  text-transform: capitalize;
+  transition: background 0.5s, color 0.5s;
+}
+
+/* Active and Hover States */
+a.active,
+a:hover {
+  background: var(--hover-color);
+  color: var(--hover-text-color);
+}
+
+/* Toggle Button for Mobile */
+.checkbtn {
+  font-size: 30px;
+  color: var(--text-color);
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* Responsive Design for Screens Smaller Than 1200px */
+@media (max-width: 1200px) {
+  .checkbtn {
+    display: block;
+    
+  }
+
+  nav ul {
+    position: fixed;
+    background-color:var(--cards-color);
+    width: 100%;
+    top: 95px; /* Adjust based on navbar height */
+    left: -100%;
+    overflow-y: auto; /* Enable vertical scrolling */
+    transition: all 0.5s;
+    text-align: center;
+    height: calc(100vh - 95px); /* Adjust based on navbar height */
+  }
+
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 20px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  /* Checkbox Selector */
+  #check:checked ~ ul {
+    left: 0;
+  }
+
+  a:hover,
+  a.active {
+    background: none;
+    color: var(--hover-color);
+  }
+}
+
+/* Dropdown Menu */
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Button */
+.dropdown_toggle {
+  background-color: var(--btn-color); /* Button background color */
+  color: var(--btn-text-color); /* Button text color */
+  border: none;
+  padding: 0 15px; /* Horizontal padding */
+  height: 35px; /* Fixed height */
+  line-height: 35px; /* Center text vertically */
+  font-size: 14px; /* Font size */
+  cursor: pointer;
+  text-transform: capitalize;
+  border-radius: 2px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: relative; /* For positioning the arrow */
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center items vertically */
+}
+
+/* Dropdown Button Arrow */
+.dropdown_toggle::after {
+  content: '\25BE'; /* Downward arrow character */
+  font-size: 12px; /* Arrow size */
+  color: var(--btn-text-color); /* Arrow color */
+  margin-left: 10px; /* Space between text and arrow */
+}
+
+/* Dropdown Button Hover Effect */
+.dropdown_toggle:hover {
+  background-color: var(--hover-color); /* Darker background on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+/* Dropdown Content */
+.dropdown_btn {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the button */
+  right: 0;
+  width:95px;
+  /* background-color: #fff; */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 2px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+  z-index: 1;
+}
+
+/* Dropdown Links */
+.dropdown_btn a {
+  color: #333; /* Link color */
+  padding: 0 15px; /* Horizontal padding */
+  text-decoration: none;
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center items vertically */
+  height: 35px; /* Same height as button */
+  line-height: 35px; /* Center text vertically */
+  border-bottom: 1px solid #ddd; /* Border between items */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.dropdown_btn a:last-child {
+  border-bottom: none; /* Remove border from last item */
+}
+
+.dropdown_btn a:hover {
+  background-color: var(--hover-color); /* Background color on hover */
+}
+
+/* Logout Button (within dropdown) */
+.dropdown_btn .logout {
+  background-color: var(--btn-color); /* Logout button background color */
+  color: var(--hover-text-color); /* Logout button text color */
+  border: none;
+  height: 35px; /* Same height as other buttons */
+  line-height: 35px; /* Center text vertically */
+  border-radius: 2px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: auto;
+  cursor: pointer;
+}
+
+.dropdown_btn .logout:hover {
+  background-color: var(--hover-color); /* Darker color on hover */
+}
+
+label{
+  color: #333;
+}
